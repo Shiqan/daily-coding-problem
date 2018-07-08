@@ -1,6 +1,5 @@
 #!/usr/bin/env python
-""" Day 1 daily-coding-problem.com """
-from timeit import Timer
+""" Problem 1 daily-coding-problem.com """
 
 def find_sum1(l, k):
     for i in l:
