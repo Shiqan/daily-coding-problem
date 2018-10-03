@@ -14,7 +14,9 @@ def is_word_in_matrix(word: str, matrix: List[List[str]]) -> bool:
     for row in range(len(matrix)):
         for col in range(row_lenght):
             if first_char == matrix[row][col]:
-                return _check_right(word, matrix[row][col:]) or _check_down(word, col, matrix[row:])
+                result = _check_right(word, matrix[row][col:]) or _check_down(word, col, matrix[row:])
+                if result:
+                    return True
 
     return False
 
@@ -27,4 +29,5 @@ if __name__ == "__main__":
     ]
     assert is_word_in_matrix("FOAM", matrix) == True
     assert is_word_in_matrix("MASS", matrix) == True
+    assert is_word_in_matrix("ANOB", matrix) == True
     assert is_word_in_matrix("HELLO", matrix) == False
